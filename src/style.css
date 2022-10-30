@@ -1,19 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen&display=swap");
+
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    
-    background-image: url('./pizza.jpg');
-    
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-    
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto";
+  height: 100vh;
+
+  background: url(images/shop.jpg) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
+  background-color: black;
+  
 }
 
-
 .content {
-   background-color: rgba(0, 0, 0, 0.9);
-    height: 100px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  width: 100%;
+  
+}
+
+.header {
+  
+  border-bottom: 2px solid white;
+  font-size: 20px;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: space-between;
+  align-items: center;
+
+  height: 140px;
+  width: 100%;
+}
+
+.leftheader {
+  display: flex;
+  justify-content: space-between;
+}
+.resName {
+  
+  color: white;
+  font-size: 100px;
+}
+.menu {
+  color: white;
+  background-color: transparent;
+
+  height: 20px;
+  width: 100px;
+}
+.about {
+  color: white;
+  background-color: transparent;
+  height: 20px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.book {
+  color: white;
+  background-color: transparent;
+  height: 20px;
+  width: 100px;
+}
+
+.contact {
+  color: white;
+  background-color: transparent;
+  height: 20px;
+  width: 100px;
+}
+.linkContainer {
+  color: orangered;
+  display: flex;
+  gap: 100px;
+}
+.iconDiv {
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 130px;
+  width: 130px;
+  content: url("./images/icon.svg");
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(262deg)
+    brightness(104%) contrast(102%);
+}
+
+.middle {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 600px;
+  /* border: 2px solid red; */
+  
+}
+
+.midleft {
+  
+  width: 77%;
+}
+.midright {
+  
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: space-between;
+  text-align: center;
+  font-family: 'Pacifico';
+  color: white;
+  font-size: 100px;
+  border: 4px solid rgb(95, 89, 89);
+  width: 30%;
+  height: 100%;
+}
+
+.welcomeP1{
+  color: white;
+  width: 100%;
+
+
+}
+
+.welcomeP2 {
+  display: flex;
+  height: 200px;
+  
+  align-items: flex-start;
+  justify-content: flex-start;
+  inline-size: 550px;
+  overflow-wrap: break-word;
+  inline-size: px;
+  
+  font-family: 'Roboto';
+  color: white;
+  font-size: 24px;
+  
+}
+
+.welcomeBtn {
+ 
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  
+  color: white;
+  font-size: 70px;
+  cursor: pointer;
+  
 }
