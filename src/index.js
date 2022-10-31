@@ -1,8 +1,12 @@
 import './style.css';
-import {Div} from './CreateDiv'
+import { Div } from './CreateDiv'
+
+import { loadAbout, loadHome, loadMenu } from './LoadPages';
+
 
 
 const header = new Div('header', 'header', '.content', 'Content')
+
 const leftheader = new Div('leftheader', 'leftheader', '.header', 'header')
 const resName = new Div('resName','resName','.leftheader','leftheader')
 const iconDiv = new Div('iconDiv', 'iconDiv', '.leftheader', 'leftheader')
@@ -15,40 +19,65 @@ const welcomeP1 = new Div('welcomeP1', 'welcomeP1', '.midright', 'midright')
 const welcomeP2 = new Div('welcomeP2', 'welcomeP2', '.midright', 'midright')
 const welcomeBtn = new Div('welcomeBtn', 'welcomeBtn', '.midright', 'midright')
 const menu = new Div('menu', 'menu', '.linkContainer', '.linkContainer')
+const menuPage = new Div('menuPage', 'menuPage', '.content', 'Content')
+const item1 = new Div('item1', 'item1', '.menuPage', 'menuPage');
+const item2 = new Div('item2', 'item2', '.menuPage', 'menuPage');
+const item3 = new Div('item3', 'item3', '.menuPage', 'menuPage');
+const item4 = new Div('item4', 'item4', '.menuPage', 'menuPage');
+const item5 = new Div('item5', 'item5', '.menuPage', 'menuPage');
+const item6 = new Div('item6', 'item6', '.menuPage', 'menuPage');
+const item7 = new Div('item7', 'item7', '.menuPage', 'menuPage');
+const item8 = new Div('item8', 'item8', '.menuPage', 'menuPage');
+const item9 = new Div('item9', 'item9', '.menuPage', 'menuPage');
+
 const about = new Div('about', 'about', '.linkContainer', '.linkContainer')
 const book = new Div('book', 'book', '.linkContainer', '.linkContainer')
 const contact = new Div('contact', 'contact','.linkContainer', '.linkContainer')
+const lantern = new Div('lantern', 'lantern', '.header', 'header')
+ 
 
 
 
-header.createSelector().createDiv();
-leftheader.createSelector().createDiv();
-iconDiv.createSelector().createDiv();
-resName.createSelector().createDiv();
-linkContainer.createSelector().createDiv();
-middle.createSelector().createDiv();
-midleft.createSelector().createDiv();
-midright.createSelector().createDiv();
-welcomeP1.createSelector().createDiv();
-welcomeP2.createSelector().createDiv();
-welcomeBtn.createSelector().createDiv();
-about.createSelector().createDiv()
-menu.createSelector().createDiv();
-book.createSelector().createDiv();
-contact.createSelector().createDiv();
 
 
-menu.textContent('Menu')
-about.textContent('About')
-book.textContent('Book')
-contact.textContent('Contact')
-resName.textContent('Le Sushi')
 
-welcomeP1.textContent('Welcome')
-welcomeP2.textContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culp')
-welcomeBtn.textContent('Order Online')
-
-
-document.getElementsByClassName('about')[0].addEventListener('click', function (event) {
-    document.querySelector('.content').style.display = 'none';
+iconDiv.me('.iconDiv').addEventListener('click', () => {
+    loadHome();
 })
+
+resName.me('.resName').addEventListener('click', () => {
+    loadHome();
+})
+
+
+
+about.me('.about').addEventListener('click', () => {
+    loadAbout();
+  
+  
+    
+})
+
+lantern.me('.lantern').addEventListener('click', () => {
+    header.me('.header').classList.toggle('slideup');
+    lantern.me('.lantern').classList.toggle('grow')
+})
+
+menu.me('.menu').addEventListener('click', () => {
+    loadMenu();
+   
+})
+
+book.me('.book').addEventListener('click', () => {
+    console.log('go book page')
+    
+    
+    
+    console.log('url("' + sushi + '");')
+})
+
+contact.me('.contact').addEventListener('click', () => {
+    console.log('go contact page')
+})
+
+

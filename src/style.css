@@ -1,51 +1,80 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen&display=swap");
 
+
+:root {
+  --NoAnimation: none;
+  --Background: url(images/shop.jpg);
+    
+}
+
+
 body {
   display: flex;
   flex-direction: column;
   font-family: "Roboto";
   height: 100vh;
 
-  background: url(images/shop.jpg) no-repeat;
+  background-image: url('./images/shop.jpg');
+  background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: contain;
   background-color: black;
-  
+  overflow-x: hidden;
+  transition: 1000ms;
 }
 
 .content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
   height: 100%;
   width: 100%;
-  
 }
 
 .header {
-  
+  position: absolute;
+  top: 0px;
+  z-index: 9999;
   border-bottom: 2px solid white;
   font-size: 20px;
   display: flex;
   background-color: rgba(0, 0, 0, 0.8);
   justify-content: space-between;
   align-items: center;
-
-  height: 140px;
+  height: 100px;
   width: 100%;
+  transition: transform 1005ms;
+}
+.slideup {
+  transform: translateY(-100%);
+}
+.hidden {
+  opacity: 0;
+}
+
+.slide {
+  transform: translateX(110%);
+}
+.grow {
+  scale: 2;
+  transform: translateY(24%);
+  
 }
 
 .leftheader {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .resName {
-  
   color: white;
-  font-size: 100px;
+  font-size: 3rem;
+  cursor: pointer;
 }
 .menu {
   color: white;
@@ -53,6 +82,11 @@ body {
 
   height: 20px;
   width: 100px;
+  cursor: pointer;
+}
+.menu:hover {
+  color: orangered;
+  font-size: 23px;
 }
 .about {
   color: white;
@@ -62,11 +96,22 @@ body {
   cursor: pointer;
 }
 
+.about:hover {
+  color: orangered;
+  font-size: 23px;
+}
+
 .book {
   color: white;
   background-color: transparent;
   height: 20px;
   width: 100px;
+  cursor: pointer;
+}
+
+.book:hover {
+  color: orangered;
+  font-size: 23px;
 }
 
 .contact {
@@ -74,6 +119,12 @@ body {
   background-color: transparent;
   height: 20px;
   width: 100px;
+  cursor: pointer;
+}
+
+.contact:hover {
+  color: orangered;
+  font-size: 23px;
 }
 .linkContainer {
   color: orangered;
@@ -82,7 +133,7 @@ body {
 }
 .iconDiv {
   display: flex;
-  
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   color: white;
@@ -99,59 +150,143 @@ body {
   width: 100%;
   height: 600px;
   /* border: 2px solid red; */
-  
 }
 
 .midleft {
-  
   width: 77%;
 }
 .midright {
-  
   display: flex;
   flex-direction: column;
-  
-  justify-content: space-between;
+  margin: 1rem 2rem;
+  padding: 0.5rem 1.5rem;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
-  font-family: 'Pacifico';
+  font-family: "Pacifico";
   color: white;
   font-size: 100px;
   border: 4px solid rgb(95, 89, 89);
   width: 30%;
   height: 100%;
+  transition: transform 1300ms cubic-bezier(.5,0,.5,1)
+  
+  
 }
 
-.welcomeP1{
+.welcomeP1 {
   color: white;
+  font-size: 4rem;
   width: 100%;
-
-
 }
 
 .welcomeP2 {
   display: flex;
   height: 200px;
-  
+  text-align: justify;
   align-items: flex-start;
   justify-content: flex-start;
   inline-size: 550px;
   overflow-wrap: break-word;
   inline-size: px;
-  
-  font-family: 'Roboto';
+
+  font-family: "Roboto";
   color: white;
   font-size: 24px;
-  
 }
 
 .welcomeBtn {
- 
   display: flex;
   justify-content: center;
   text-align: center;
-  
+
   color: white;
-  font-size: 70px;
+  font-size: 2rem;
   cursor: pointer;
-  
+}
+
+.lantern {
+  position: relative;
+  display: flex;
+  right: 0%;
+  top: 117%;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 130px;
+  width: 130px;
+  cursor: pointer;
+  content: url("./images/lantern.svg");
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(262deg)
+    brightness(104%) contrast(102%);
+    transition: scale 200ms ease-in-out , transfrom 100ms ease-in-out;
+}
+
+.menuPage {
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+ 
+item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
+ 
+ 
+}
+
+item img {
+  padding: 20px;
+  height: 40%;
+  width: 30%;
+  border-radius: 30px;
+}
+
+item img:hover {
+  transform: scale(2);
+  transition: 1s;
+}
+
+.item1Text, .item2Text,
+.item3Text, .item7Text,
+.item4Text, .item8Text,
+.item5Text, .item9Text,
+.item6Text
+
+{
+  margin: 20px;
+  font-size: 30px;
+  color: white;
+}
+
+@keyframes headerBar {
+  0%
+  {
+    transform: translateY(0vh);
+  }
+  25% 
+  {
+    transform: translateY(5vh);
+  }
+  50%
+  {
+    transform: translateY(10vh);
+  }
+  75%
+  {
+    transform: translateY(5vh);
+  }
+  100%
+  {
+    transform: translateY(0vh);
+  }
 }
