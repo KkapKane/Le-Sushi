@@ -30,6 +30,13 @@ export class Div {
         
         return this;
     }
+    createInput() {
+        this.name = document.createElement('input')
+        this.name.classList.add(this.className)
+        this.selectorName.appendChild(this.name)
+        
+        return this;
+    }
     textContent(text) {
         
         let who = '.' + this.className

@@ -165,9 +165,10 @@ body {
   text-align: center;
   font-family: "Pacifico";
   color: white;
-  font-size: 100px;
+  font-size: 1rem;
   border: 4px solid rgb(95, 89, 89);
   width: 30%;
+  
   height: 100%;
   transition: transform 1300ms cubic-bezier(.5,0,.5,1)
   
@@ -181,14 +182,11 @@ body {
 }
 
 .welcomeP2 {
+  width: 100%;
   display: flex;
-  height: 200px;
   text-align: justify;
   align-items: flex-start;
   justify-content: flex-start;
-  inline-size: 550px;
-  overflow-wrap: break-word;
-  inline-size: px;
 
   font-family: "Roboto";
   color: white;
@@ -204,6 +202,8 @@ body {
   font-size: 2rem;
   cursor: pointer;
 }
+
+
 
 .lantern {
   position: relative;
@@ -221,6 +221,49 @@ body {
     brightness(104%) contrast(102%);
     transition: scale 200ms ease-in-out , transfrom 100ms ease-in-out;
 }
+.contactNum {
+  color:white;
+  font-size: 20px;
+}
+.contactPage{
+  display: none;
+  gap:10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+iframe{
+  display: none;
+}
+.contactInfo {
+  display: flex;
+  gap: 8rem;
+}
+.nameCont{
+  display: flex;
+  gap: 8rem;
+}
+.bookPage {
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50%;
+  
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+}
+.bookBtn {
+  padding: 2rem;
+  color: white;
+  font-size: 2rem;
+  border: 2px solid white;
+  cursor: pointer;
+}
 
 .menuPage {
   display: none;
@@ -232,6 +275,31 @@ body {
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.8);
 }
+
+.aboutPage {
+  color: white;
+  text-align: justify;
+  font-size: 2.3rem;
+  display: none;
+  flex-direction: column;
+  padding: 40px;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.8);
+
+}
+.aboutTitle {
+  font-size: 4rem;
+  letter-spacing: 1rem;
+}
+.aboutText {
+  padding: 0 8%;
+  overflow-wrap: break-word;
+}
  
 item {
   display: flex;
@@ -242,6 +310,13 @@ item {
   border-radius: 5px;
  
  
+}
+.item1, .item2,
+.item3, .item7,
+.item4, .item8,
+.item5, .item9,
+.item6{
+border: 2px solid white;
 }
 
 item img {
@@ -266,6 +341,7 @@ item img:hover {
   margin: 20px;
   font-size: 30px;
   color: white;
+  
 }
 
 @keyframes headerBar {

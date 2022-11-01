@@ -12,7 +12,8 @@ import hamachi from './images/hamachi.png';
 import octopus from './images/octopus.png';
 import oliveshrimp from './images/oliveshrimp.png';
 import AboutPage from './images/about.jpg';
-
+import reserved from './images/reserved.jpg';
+import location from './images/location.jpg';
 
 
 
@@ -51,8 +52,21 @@ const item7Text = new Div('item1Text', 'item7Text', '.item7', 'item7');
 const item8Text = new Div('item1Text', 'item8Text', '.item8', 'item8');
 const item9Text = new Div('item1Text', 'item9Text', '.item9', 'item9');
 
+const bookPage = new Div('bookPage', 'bookPage', '.content', 'Content')
+const nameCont = new Div('nameCont', 'nameCont', '.bookPage', 'bookPage')
+const contactInfo = new Div('contactInfo', 'contactInfo', '.bookPage', 'bookPage')
+const fName = new Div('fName', 'fName', '.nameCont', 'nameCont')
+const lName = new Div('lName', 'lName', '.nameCont', 'nameCont')
+const pNum = new Div('pNum', 'pNum', '.contactInfo', 'contactInfo')
+const email = new Div('email', 'email', '.contactInfo', 'contactInfo')
+const bookBtn = new Div('bookBtn', 'bookBtn', '.bookPage', 'bookPage')
+const contactPage = new Div('contactPage', 'contactPage', '.content', 'content')
+
 
 const about = new Div('about', 'about', '.linkContainer', '.linkContainer')
+const aboutPage = new Div('aboutPage', 'aboutPage', '.content', 'content')
+const aboutText = new Div('aboutText', 'aboutText', '.aboutPage', 'aboutPage')
+const aboutTitle = new Div('aboutTitle', 'aboutTitle', '.aboutPage', 'aboutPage')
 const book = new Div('book', 'book', '.linkContainer', '.linkContainer')
 const contact = new Div('contact', 'contact','.linkContainer', '.linkContainer')
 const lantern = new Div('lantern', 'lantern', '.header', 'header')
@@ -74,7 +88,18 @@ menu.createSelector().createDiv();
 menuPage.createSelector().createDiv();
 book.createSelector().createDiv();
 contact.createSelector().createDiv();
-
+aboutPage.createSelector().createDiv();
+aboutTitle.createSelector().createDiv();
+aboutText.createSelector().createDiv();
+bookPage.createSelector().createDiv();
+nameCont.createSelector().createDiv();
+contactInfo.createSelector().createDiv();
+contactPage.createSelector().createDiv();
+fName.createSelector().createInput();
+lName.createSelector().createInput();
+pNum.createSelector().createInput();
+email.createSelector().createInput();
+bookBtn.createSelector().createDiv();
 item1.createSelector().createItem();
 item2.createSelector().createItem();
 item3.createSelector().createItem();
@@ -98,9 +123,14 @@ contact.textContent('Contact')
 resName.textContent('Le Sushi')
 
 welcomeP1.textContent('Welcome')
-welcomeP2.textContent('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culp')
+welcomeP2.textContent('Lorem ipsum dolor sit amet, uis nsi u cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culp')
 welcomeBtn.textContent('Order Online')
-
+aboutText.textContent('Lorem em ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. ')
+aboutTitle.textContent('ABOUT')
+fName.me('.fName').placeholder = 'First Name'
+lName.me('.lName').placeholder = 'Last Name'
+email.me('.email').placeholder = 'Email'
+pNum.me('.pNum').placeholder = 'Number'
 
 const ItemAburi = new Image();
 ItemAburi.src = aburi;
@@ -167,38 +197,97 @@ item7Text.textContent('Hamachi Roll')
 item8Text.textContent('Octopus Nigiri')
 item9Text.textContent('Olive Shrimp Nigiri')
 
- 
+ bookBtn.textContent('Book')
 
+ // google map
+const map = document.createElement('iframe');
+map.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13417249.30712358!2d140.3463282690603!3d34.8135986042674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34674e0fd77f192f%3A0xf54275d47c665244!2sJapan!5e0!3m2!1sen!2sus!4v1667267476710!5m2!1sen!2sus";
+map.width = '600px';
+map.height = '400px';
+contactPage.me('.contactPage').appendChild(map);
+const contactNum = document.createElement('div')
+contactNum.classList.add('contactNum')
+contactPage.me('.contactPage').appendChild(contactNum)
 
-
+contactNum.textContent = 'Contact Number: 123-123-123'
 
 
 
 export function loadMenu() {
+    middle.me('.middle').style.display = 'flex';
     document.body.style.backgroundImage = 'url("' + sushi + '")';
     document.body.style.backgroundSize = '100%';
     document.body.style.backgroundPositionY = '50%';
     menuPage.me('.menuPage').style.display = 'grid';
-   
-    
+    aboutPage.me('.aboutPage').style.display = 'none';
+    lantern.me('.lantern').style.filter = 'invert(100%) sepia(0%) saturate(0%) hue-rotate(262deg)brightness(104%) contrast(102%)'
     console.log('go menu page')
     midright.me('.midright').classList.add  ('slide');
-
+    bookPage.me('.bookPage').style.display = 'none';
     header.me('.header').classList.toggle('slideup');
 }
 
 export function loadHome() {
+    contactPage.me('.contactPage').style.display = 'none';
+    map.style.display = 'none';
+    bookPage.me('.bookPage').style.display = 'none';
+    middle.me('.middle').style.display = 'flex';
     midright.me('.midright').classList.toggle('slide');
     document.body.style.backgroundImage = 'url("' + shop + '")';
     document.body.style.backgroundSize = 'contain';
     menuPage.me('.menuPage').style.display = 'none';
+    aboutPage.me('.aboutPage').style.display = 'none';
+    lantern.me('.lantern').style.filter = 'invert(100%) sepia(0%) saturate(0%) hue-rotate(262deg)brightness(104%) contrast(102%)'
 }
 
 export function loadAbout() {
+    contactPage.me('.contactPage').style.display = 'none';
+    map.style.display = 'none';
+    bookPage.me('.bookPage').style.display = 'none';
+    middle.me('.middle').style.display = 'flex';
     document.body.style.backgroundImage = 'url("' + AboutPage + '")';
     document.body.style.backgroundSize = '100%';
     menuPage.me('.menuPage').style.display = 'none';
     header.me('.header').classList.toggle('slideup');
     lantern.me('.lantern').classList.toggle('grow')
     midright.me('.midright').classList.add('slide');
+    aboutPage.me('.aboutPage').style.display = 'flex';
+    lantern.me('.lantern').style.filter = 'invert(100%) sepia(0%) saturate(0%) hue-rotate(262deg)brightness(104%) contrast(102%)'
+}
+
+export function Lantern() {
+    header.me('.header').classList.toggle('slideup');
+    lantern.me('.lantern').classList.toggle('grow')
+    
+}
+
+export function loadBook() {
+    contactPage.me('.contactPage').style.display = 'none';
+    map.style.display = 'none';
+    bookPage.me('.bookPage').style.display = 'flex';
+    midright.me('.midright').classList.add('slide');
+    aboutPage.me('.aboutPage').style.display = 'none';
+    document.body.style.backgroundImage = 'url("' + reserved + '")';
+    document.body.style.backgroundSize = '100%';
+    document.body.style.backgroundPositionY = '60%';
+    menuPage.me('.menuPage').style.display = 'none';
+    middle.me('.middle').style.display = 'none';
+    lantern.me('.lantern').style.filter = 'invert(0%) sepia(96%) saturate(17%) hue-rotate(288deg) brightness(104%) contrast(104%)';
+}
+
+export function loadContact() {
+    bookPage.me('.bookPage').style.display = 'none';
+    middle.me('.middle').style.display = 'none';
+    document.body.style.backgroundImage = 'url("' + location + '")';
+    document.body.style.backgroundSize = '100%';
+    document.body.style.backgroundPositionY = '60%';
+    menuPage.me('.menuPage').style.display = 'none';
+    header.me('.header').classList.toggle('slideup');
+    lantern.me('.lantern').classList.toggle('grow')
+    midright.me('.midright').classList.add('slide');
+    aboutPage.me('.aboutPage').style.display = 'none';
+    lantern.me('.lantern').style.filter = 'invert(100%) sepia(0%) saturate(0%) hue-rotate(262deg)brightness(104%) contrast(102%)'
+    contactPage.me('.contactPage').style.display = 'flex';
+    map.style.display = 'flex';
+
 }
