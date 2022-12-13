@@ -1,28 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
 
 :root {
   --NoAnimation: none;
   --Background: url(images/shop.jpg);
-    
 }
-
 
 body {
   display: flex;
   flex-direction: column;
   font-family: "Roboto";
   height: 100vh;
-
   background-image: url('./images/shop.jpg');
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: contain;
+  background-size: cover;
   background-color: black;
-  overflow-x: hidden;
+  overflow: hidden;
   transition: 1000ms;
 }
 
@@ -31,28 +27,61 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
   height: 100%;
   width: 100%;
 }
 
 .header {
   position: absolute;
-  top: 0px;
+  top: 0;
   z-index: 9999;
   border-bottom: 2px solid white;
-  font-size: 20px;
+  font-size: 1.3rem;
   display: flex;
   background-color: rgba(0, 0, 0, 0.8);
   justify-content: space-between;
   align-items: center;
   height: 100px;
-  width: 100%;
+  width: 100vw;
   transition: transform 1005ms;
 }
+
+.leftheader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Londrina Shadow', cursive;
+}
+
+.iconDiv {
+  margin-top: 15px;
+  cursor: pointer;
+  color: white;
+  height: 100px;
+  width: 100px;
+  content: url("./images/icon.svg");
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(262deg) brightness(104%) contrast(102%);
+}
+
+.linkContainer {
+  display: flex;
+  gap: 3rem;
+  color: white;
+  background-color: transparent;
+}
+
+.menu:hover,
+.about:hover,
+.book:hover,
+.contact:hover {
+  cursor: pointer;
+  color: orangered;
+}
+
 .slideup {
   transform: translateY(-100%);
 }
+
 .hidden {
   opacity: 0;
 }
@@ -60,150 +89,65 @@ body {
 .slide {
   transform: translateX(110%);
 }
+
 .grow {
   scale: 2;
   transform: translateY(24%);
-  
 }
 
-.leftheader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .resName {
   color: white;
   font-size: 3rem;
   cursor: pointer;
-}
-.menu {
-  color: white;
-  background-color: transparent;
-
-  height: 20px;
-  width: 100px;
-  cursor: pointer;
-}
-.menu:hover {
-  color: orangered;
-  font-size: 23px;
-}
-.about {
-  color: white;
-  background-color: transparent;
-  height: 20px;
-  width: 100px;
-  cursor: pointer;
-}
-
-.about:hover {
-  color: orangered;
-  font-size: 23px;
-}
-
-.book {
-  color: white;
-  background-color: transparent;
-  height: 20px;
-  width: 100px;
-  cursor: pointer;
-}
-
-.book:hover {
-  color: orangered;
-  font-size: 23px;
-}
-
-.contact {
-  color: white;
-  background-color: transparent;
-  height: 20px;
-  width: 100px;
-  cursor: pointer;
-}
-
-.contact:hover {
-  color: orangered;
-  font-size: 23px;
-}
-.linkContainer {
-  color: orangered;
-  display: flex;
-  gap: 100px;
-}
-.iconDiv {
-  display: flex;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  height: 130px;
-  width: 130px;
-  content: url("./images/icon.svg");
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(262deg)
-    brightness(104%) contrast(102%);
 }
 
 .middle {
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  height: 600px;
-  /* border: 2px solid red; */
+  height: 50%;
 }
 
-.midleft {
-  width: 77%;
-}
 .midright {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
   margin: 1rem 2rem;
   padding: 0.5rem 1.5rem;
-  justify-content: space-around;
   background-color: rgba(0, 0, 0, 0.8);
-  text-align: center;
   font-family: "Pacifico";
   color: white;
   font-size: 1rem;
   border: 4px solid rgb(95, 89, 89);
-  width: 30%;
-  
+  width: clamp(200px, 25%, 50%);
   height: 100%;
-  transition: transform 1300ms cubic-bezier(.5,0,.5,1)
-  
-  
+  transition: transform 1300ms cubic-bezier(.5, 0, .5, 1);
 }
 
 .welcomeP1 {
-  color: white;
-  font-size: 4rem;
-  width: 100%;
+  font-size: 2rem;
 }
 
 .welcomeP2 {
-  width: 100%;
   display: flex;
   text-align: justify;
-  align-items: flex-start;
-  justify-content: flex-start;
-
   font-family: "Roboto";
-  color: white;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .welcomeBtn {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-
-  color: white;
-  font-size: 2rem;
+  align-self: center;
+  width: fit-content;
+  font-size: 1.3rem;
   cursor: pointer;
+  border: 2px solid white;
+  padding: 3px 2rem;
 }
 
-
+.welcomeBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
 .lantern {
   position: relative;
@@ -217,52 +161,33 @@ body {
   width: 130px;
   cursor: pointer;
   content: url("./images/lantern.svg");
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(262deg)
-    brightness(104%) contrast(102%);
-    transition: scale 200ms ease-in-out , transfrom 100ms ease-in-out;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(262deg) brightness(104%) contrast(102%);
+  transition: scale 200ms ease-in-out, transfrom 100ms ease-in-out;
 }
-.contactNum {
-  color:white;
-  font-size: 20px;
-}
-.contactPage{
-  display: none;
-  gap:10px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 60%;
-  width: 60%;
-  background-color: rgba(0, 0, 0, 0.9);
-}
-iframe{
-  display: none;
-}
-.contactInfo {
-  display: flex;
-  gap: 8rem;
-}
-.nameCont{
-  display: flex;
-  gap: 8rem;
-}
-.bookPage {
-  display: none;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 50%;
-  
-  width: 50%;
-  background-color: rgba(0, 0, 0, 0.9);
-  border-radius: 15px;
-}
-.bookBtn {
-  padding: 2rem;
+
+.aboutPage {
   color: white;
-  font-size: 2rem;
-  border: 2px solid white;
-  cursor: pointer;
+  text-align: justify;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  height: 75%;
+  width: 75%;
+  border-radius: 2rem;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.aboutTitle {
+  font-size: 3rem;
+  letter-spacing: 1.5rem;
+}
+
+.aboutText {
+  padding: 0 8%;
+  overflow-wrap: break-word;
+  font-size: 1.5rem;
 }
 
 .menuPage {
@@ -276,53 +201,30 @@ iframe{
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.aboutPage {
-  color: white;
-  text-align: justify;
-  font-size: 2.3rem;
-  display: none;
-  flex-direction: column;
-  padding: 40px;
-  align-items: center;
-  justify-content: space-evenly;
-  position: absolute;
-  height: 80%;
-  width: 80%;
-  border-radius: 50px;
-  background-color: rgba(0, 0, 0, 0.8);
-
-}
-.aboutTitle {
-  font-size: 4rem;
-  letter-spacing: 1rem;
-}
-.aboutText {
-  padding: 0 8%;
-  overflow-wrap: break-word;
-}
- 
 item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   border-radius: 5px;
- 
- 
 }
-.item1, .item2,
-.item3, .item7,
-.item4, .item8,
-.item5, .item9,
-.item6{
-border: 2px solid white;
+
+.item1,
+.item2,
+.item3,
+.item7,
+.item4,
+.item8,
+.item5,
+.item9,
+.item6 {
+  border: 2px solid white;
 }
 
 item img {
   padding: 20px;
-  height: 40%;
-  width: 30%;
+  height: auto;
+  width: 40%;
   border-radius: 30px;
 }
 
@@ -331,38 +233,88 @@ item img:hover {
   transition: 1s;
 }
 
-.item1Text, .item2Text,
-.item3Text, .item7Text,
-.item4Text, .item8Text,
-.item5Text, .item9Text,
-.item6Text
-
-{
-  margin: 20px;
-  font-size: 30px;
+.item1Text,
+.item2Text,
+.item3Text,
+.item7Text,
+.item4Text,
+.item8Text,
+.item5Text,
+.item9Text,
+.item6Text {
+  margin: 1rem;
+  font-size: 2rem;
   color: white;
-  
+}
+
+.bookPage {
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50%;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+}
+
+.nameCont input,
+.contactInfo input {
+  font-size: 1.1rem;
+  margin: 0 1rem;
+}
+
+.bookBtn {
+  padding: 5px 2rem;
+  color: white;
+  font-size: 1.2rem;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.bookBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.contactNum {
+  color: white;
+  font-size: 20px;
+}
+
+.contactPage {
+  display: none;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+}
+
+iframe {
+  display: none;
 }
 
 @keyframes headerBar {
-  0%
-  {
+  0% {
     transform: translateY(0vh);
   }
-  25% 
-  {
+
+  25% {
     transform: translateY(5vh);
   }
-  50%
-  {
+
+  50% {
     transform: translateY(10vh);
   }
-  75%
-  {
+
+  75% {
     transform: translateY(5vh);
   }
-  100%
-  {
+
+  100% {
     transform: translateY(0vh);
   }
 }
