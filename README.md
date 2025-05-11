@@ -30,7 +30,11 @@ Click [here](https://kkapkane.github.io/restaurant-page/) for live demo.
 # Previews
 
 
-<img src="https://s9.gifyu.com/images/restaurant.png" alt="preview" width="900">
+
+
+https://github.com/user-attachments/assets/d10d3df4-f3c8-4f1f-878c-e4c3211e7e78
+
+
 
 
 
