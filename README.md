@@ -1,9 +1,5 @@
 <h1 align="center">🍽️ Le Sushi</h1>
 
-🚀 [Live Demo](https://kkapkane.github.io/Le-Sushi/)
-
----
-
 ## Built With
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
@@ -12,7 +8,7 @@
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
----
+
 
 ## Overview
 
@@ -20,7 +16,9 @@ This project is a single-page restaurant website developed as part of [The Odin 
 
 The site features multiple animated transitions and modular JavaScript architecture, showcasing a clean approach to state-driven UI updates.
 
----
+## Preview
+
+https://github.com/user-attachments/assets/bb2a31a6-321e-488e-b426-ff014d0a02c7
 
 ## Features
 
@@ -32,16 +30,4 @@ The site features multiple animated transitions and modular JavaScript architect
 
 ---
 
-## Preview
-
-
-
-
-
-https://github.com/user-attachments/assets/bb2a31a6-321e-488e-b426-ff014d0a02c7
-
-
-
-
----
 
